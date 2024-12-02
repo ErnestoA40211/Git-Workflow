@@ -20,3 +20,21 @@
     </table>
 </body>
 </html>
+<script>
+    const tableData = [
+        { id: 1, name: "John" },
+        { id: 2, name: "Jane" },
+        { id: 3, name: "Mike" },
+    ];
+
+    function populateTable() {
+        const table = document.querySelector("table");
+        tableData.forEach(data => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${data.id}</td><td>${data.name}</td>`;
+            table.appendChild(row);
+        });
+    }
+
+    window.onload = populateTable;
+</script>

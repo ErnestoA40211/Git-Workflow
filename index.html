@@ -37,4 +37,16 @@
     }
 
     window.onload = populateTable;
+
+    function sortTable() {
+    tableData.sort((a, b) => a.name.localeCompare(b.name));
+    const rows = document.querySelectorAll("tr");
+    rows.forEach((row, index) => {
+        if (index > 0) row.remove(); // Remove rows except header
+    });
+    populateTable();
+}
+document.querySelector("h1").onclick = sortTable;
+
 </script>
+
